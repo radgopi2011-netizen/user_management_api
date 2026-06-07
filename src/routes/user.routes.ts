@@ -23,7 +23,7 @@ import {
 const router = Router();
 
 router.post("/",authMiddleware,authorize(ROLES.ADMINACCESS),createUserValidation,validate,createUser);
-
+router.post("/createadmin",createUserValidation,validate,createUser);
 router.get("/",authMiddleware,getUsers);
 
 router.get("/:id",authMiddleware,getUser);
